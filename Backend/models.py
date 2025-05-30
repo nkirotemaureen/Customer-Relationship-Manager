@@ -1,6 +1,6 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column ,Integer, String, DateTime
-from sqlalchemy import relationship
+from sqlalchemy.orm import relationship
 from datetime import datetime
 
 Base = declarative_base()
@@ -22,5 +22,5 @@ class Client(Base):
         #client_id =Column(Integer, ForeignKey("clients.id"))
         type = Column (String)
         notes = Column(String)
-        date = Column(DateTime, default = datetime.gmtnow)
+        date = Column(DateTime, default = datetime)
         client = relationship("Client",back_populates = "interactions")
