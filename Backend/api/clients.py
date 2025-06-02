@@ -1,9 +1,17 @@
-from fastapi import APIRouter
-from typing import List
-from Backend import schemas # Adjust if your import is different
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
+from .. import schemas, models, database
 
-router = APIRouter()
+router = APIRouter(prefix="/clients", tags=["clients"])
 
-@router.get("/", response_model=List[schemas.Client])
-def get_clients():
-    return []
+@router.post("/", response_model=schemas.Client)
+def create_client(client: schemas.ClientCreate, db: Session = Depends(database.get_db)):
+    new_client = models.Client(**client.dict())
+    db.add(new_client)
+    db.commit()
+    db.refresh(new_client)
+    return new_client
+
+@router.get("/", response_model=list[schemas.Client])
+def get_clients(db: Session = Depends(database.get_db)):
+    return db.query(models.Client).all()

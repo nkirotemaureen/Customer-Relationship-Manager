@@ -5,7 +5,7 @@ import ClientList from './components/ClientList';
 function App() {
 return (
 <div className="App">
-<h1>Simple CRM App</h1>
+<h1>CRM App</h1>
 <ClientForm onClientAdded={() => window.location.reload()} />
 <ClientList />
 </div>
