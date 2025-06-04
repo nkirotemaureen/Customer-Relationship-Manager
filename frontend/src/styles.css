@@ -1,0 +1,86 @@
+nav {
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--accent-color);
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+:root {
+    --primary-color: #001f3f;   /* Navy Blue */
+    --accent-color: #2ecc40;    /* Green */
+    --text-light: #ffffff;
+    --bg-light: #f4f4f4;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: var(--text-light);
+    text-align: center;
+  }
+  
+  .button {
+    background-color: var(--accent-color);
+    color: var(--text-light);
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .button:hover {
+    background-color: #28a030;
+  }
+  
+  .card {
+    background: #fff;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .form {
+    background: #f9f9f9;
+    border: 2px solid navy;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+  
+  .form input, .form textarea, .form select {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .button {
+    background: green;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .button:hover {
+    background: darkgreen;
+  }
